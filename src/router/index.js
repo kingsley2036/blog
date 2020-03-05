@@ -13,42 +13,81 @@ import store from '../store/index';
 window.store=store;
 Vue.use(Router)
 
-const router= new Router({
+// const router= new Router({
+//   routes: [
+//     {
+//       path: '/',
+//       component: Index
+//     },
+//     {
+//       path: '/login',
+//       component: Login
+//     },
+//     {
+//       path: '/detail/:blogId',
+//       component: Detail
+//     },
+//     {
+//       path: '/edit/:blogId',
+//       component: Edit,
+//       meta:{requiresAuth:true}
+//     },
+//     {
+//       path: '/create',
+//       component: Create,
+//       meta:{requiresAuth:true}
+//     },
+//     {
+//       path: '/user/:userId',
+//       component: User
+//     },
+//     {
+//       path: '/my',
+//       component: My,
+//       meta:{requiresAuth:true}
+//     },
+//     {
+//       path: '/register',
+//       component: Register
+//     }
+//   ]
+// })
+const router =  new Router({
   routes: [
     {
       path: '/',
-      component: Index
+      component: () => import('@/pages/Index/template.vue')
     },
     {
       path: '/login',
-      component: Login
+      component: () => import('@/pages/Login/template.vue')
     },
     {
       path: '/detail/:blogId',
-      component: Detail
+      component: () => import('@/pages/Detail/template.vue')
     },
     {
       path: '/edit/:blogId',
-      component: Edit,
-      meta:{requiresAuth:true}
+      component: () => import('@/pages/Edit/template.vue'),
+      meta: { requiresAuth: true }
     },
     {
       path: '/create',
-      component: Create,
-      meta:{requiresAuth:true}
+      component: () => import('@/pages/Create/template.vue'),
+      meta: { requiresAuth: true }
     },
     {
       path: '/user/:userId',
-      component: User
+      component: () => import('@/pages/User/template.vue')
     },
     {
       path: '/my',
-      component: My,
-      meta:{requiresAuth:true}
+      component: () => import('@/pages/My/template.vue'),
+      meta: { requiresAuth: true }
     },
     {
       path: '/register',
-      component: Register
+      component: () => import('@/pages/Register/template.vue')
     }
   ]
 })
