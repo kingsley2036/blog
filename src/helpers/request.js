@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { Message } from 'element-ui'
 
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
-axios.defaults.baseURL = 'https://blog-server.hunger-valley.com'
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+axios.defaults.baseURL = 'https://blog-server.hunger-valley.com';
 axios.defaults.withCredentials = true
 
 export default function request(url, type = 'GET', data = {}) {
@@ -19,7 +19,7 @@ export default function request(url, type = 'GET', data = {}) {
     axios(option).then(res => {
       console.log(res.data)
       //为什么是res.data呢?
-      //因为这是axios决定的,我们所有请求到的结果都在res.data里面,而不是在res里
+      //因为这是axios决定的,我们所有请求到的结果都在res.data里面,而不是在res里;
       if(res.data.status === 'ok') {
         resolve(res.data)
       }else{
@@ -34,7 +34,3 @@ export default function request(url, type = 'GET', data = {}) {
 }
 
 
-// request('/auth/login', 'POST', {username: 'hunger', password: '123456'})
-//   .then(data=>{
-//     console.log(data)
-//   })
