@@ -11,7 +11,7 @@
     "zip": "rm -f *.zip && zip  -r `git branch | grep '\\* ' | cut -d ' ' -f 2`.zip . -x 'node_modules/*'"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "element-ui": "^2.3.9",
     "less-loader": "^4.1.0",
     "marked": "^0.8.0",
